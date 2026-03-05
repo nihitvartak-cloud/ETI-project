@@ -5,44 +5,70 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>fooDoKoo - Recipe Converter</title>
     <link rel="stylesheet" href="css/style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/@google/generative-ai"></script>
 </head>
 <body>
     <header>
-        <h1>fooDoKoo</h1>
-        <p>Swap your non-veg recipes to veg and get AI-guided suggestions!</p>
+        <h1>🍽️ fooDoKoo</h1>
+        <p>✨ Transform your recipes & discover culinary possibilities! ✨</p>
+        <p style="font-size: 0.95rem; opacity: 0.9;">Swap your non-veg recipes to veg and get AI-guided suggestions!</p>
     </header>
 
     <main>
         <section id="converter">
-            <h2>Recipe Converter</h2>
+            <h2>🔄 Recipe Converter</h2>
             <div id="directionControls">
-                <label><input type="radio" name="direction" value="toVeg" checked> Non‑veg → Veg</label>
-                <label><input type="radio" name="direction" value="toNonVeg"> Veg → Non‑veg</label>
+                <label><input type="radio" name="direction" value="toVeg" checked> 🥩 Non‑veg → 🥬 Veg</label>
+                <label><input type="radio" name="direction" value="toNonVeg"> 🥬 Veg → 🥩 Non‑veg</label>
             </div>
-            <textarea id="inputRecipe" placeholder="Paste your recipe here"></textarea>
-            <button id="convertBtn">Convert</button>
-            <h3>Converted Version</h3>
+            <textarea id="inputRecipe" placeholder="📝 Paste your recipe here..."></textarea>
+            <button id="convertBtn">✨ Convert Recipe</button>
+            <h3>🎯 Converted Version</h3>
             <textarea id="outputRecipe" readonly></textarea>
 
             <div id="examples">
-                <h3>Sample Recipes</h3>
+                <h3>🌟 Sample Recipes</h3>
                 <select id="exampleSelect">
                     <option value="">-- choose example --</option>
                 </select>
-                <button id="loadExampleBtn">Load</button>
+                <button id="loadExampleBtn">📥 Load Example</button>
             </div>
         </section>
 
         <section id="suggestions">
-            <h2>Dish Suggestions</h2>
-            <input type="text" id="suggestionInput" placeholder="Type an ingredient or idea" />
-            <button id="suggestBtn">Get Suggestions</button>
+            <h2>💡 Dish Suggestions</h2>
+            <input type="text" id="suggestionInput" placeholder="🔍 Type an ingredient or idea..." />
+            <button id="suggestBtn">🚀 Get Suggestions</button>
             <ul id="suggestionList"></ul>
+        </section>
+
+        <section id="recipeSection" style="display: none;">
+            <h2>📖 Full Recipe</h2>
+            <div id="recipeContent">
+                <h3 id="recipeName"></h3>
+                <div id="recipeInfo">
+                    <p>🍽️ <strong>Servings:</strong> <span id="recipeServings"></span></p>
+                    <p>⏱️ <strong>Prep Time:</strong> <span id="recipePrepTime"></span></p>
+                    <p>🔥 <strong>Cook Time:</strong> <span id="recipeCookTime"></span></p>
+                </div>
+                <div id="recipeIngredients">
+                    <h4>🥘 Ingredients</h4>
+                    <ul id="ingredientsList"></ul>
+                </div>
+                <div id="recipeInstructions">
+                    <h4>👨‍🍳 Instructions</h4>
+                    <ol id="instructionsList"></ol>
+                </div>
+                <div id="recipeTips">
+                    <h4>💎 Chef's Tips</h4>
+                    <p id="recipeTipsText"></p>
+                </div>
+            </div>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2026 fooDoKoo</p>
+        <p>&copy; 2026 fooDoKoo | Made with ❤️ for food lovers</p>
     </footer>
 
     <script src="js/app.js"></script>
